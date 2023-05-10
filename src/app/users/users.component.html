@@ -1,0 +1,12 @@
+<div class="users-container">
+  <h2>Users</h2>
+  <ag-grid-angular
+    class="ag-theme-alpine"
+    [gridOptions]="gridOptions"
+    [columnDefs]="columnDefs"
+    [rowData]="rowData">
+  </ag-grid-angular>
+
+  <h3>{{ selectedUser ? 'Edit User' : 'Create User' }}</h3>
+  <app-user-form [user]="selectedUser" (userUpdated)="userUpdated()"></app-user-form>
+</div>
