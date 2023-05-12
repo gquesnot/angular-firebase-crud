@@ -6,7 +6,7 @@ This project is a simple CRUD application built with Angular and Firebase. It in
 
 - Firebase Authentication (Sign-In, Sign-Up)
 - CRUD operations with Firebase Firestore
-- Angular Reactive Forms
+- Angular Reactive Forms with Validation
 - Angular Routing and Guards
 - Dialog usage for creating and updating data
 
