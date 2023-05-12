@@ -1,27 +1,52 @@
-# Angular2
+# Angular Firebase CRUD Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+This project is a simple CRUD application built with Angular and Firebase. It includes features such as user authentication and protected routes.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Firebase Authentication (Sign-In, Sign-Up)
+- CRUD operations with Firebase Firestore
+- Angular Reactive Forms
+- Angular Routing and Guards
+- Dialog usage for creating and updating data
 
-## Code scaffolding
+## Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/en/)
+- [Angular CLI](https://angular.io/cli)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup
+Clone the repository to your local machine:
 
-## Build
+```bash
+git clone https://github.com/gquesnot/angular-firebase-crud.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Navigate into the project directory:
 
-## Running unit tests
+  ```bash
+  cd angular-firebase-crud
+  ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the dependencies:
 
-## Running end-to-end tests
+  ```bash
+  npm install
+  ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Running the Application
+Start the development server with the following command:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  ```bash
+  ng serve
+  ```
+Navigate to http://localhost:4200/ in your browser. The app will automatically reload if you change any of the source files.
+
+## Deployment
+
+```bash
+ng build --prod
+```
+This will create a dist/ directory with the compiled project. You can then deploy this directory to any static file server or configure Firebase Hosting.
+
