@@ -8,7 +8,6 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {RouterModule} from "@angular/router";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import { BtnsCellComponent } from './btns-cell/btns-cell.component';
 import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireModule} from "@angular/fire/compat";
@@ -23,15 +22,20 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {AuthGuard} from "@angular/fire/auth-guard";
 import {AppRoutingModule} from "./app-routing.module";
+import {AuthService} from "./services/auth.service";
+
+
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { ShuffleStringPipe } from './pipes/shuffle-string.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BtnsCellComponent,
     PagesComponent,
     PageFormComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ShuffleStringPipe
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,10 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule
+  ],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
+    AuthService
   ],
   bootstrap: [AppComponent],
 })

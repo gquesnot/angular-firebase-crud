@@ -1,1 +1,6 @@
+<div *ngIf="user | async as user" class="flex ">
+  <h1>Welcome, {{ user?.email }}</h1>
+  <button (click)="logout()" class="ml-4 btn-red">Logout</button>
+</div>
+
 <router-outlet></router-outlet>

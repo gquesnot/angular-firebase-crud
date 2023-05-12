@@ -1,22 +1,22 @@
-<button (click)="openCreateModal()">Create New Page</button>
+<button (click)="openCreateModal()" class="btn-primary">Create New Page</button>
 
 <table>
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th>Path</th>
-    <th>Actions</th>
+    <th class="py-1 px-2">Name</th>
+    <th class="py-1 px-2">Content</th>
+    <th class="py-1 px-2">Path</th>
+    <th class="py-1 px-2">Actions</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let page of pages">
-    <td>{{ page.name }}</td>
-    <td>{{ page.content }}</td>
-    <td>{{ page.path }}</td>
-    <td>
-      <button (click)="openUpdateModal(page)">Update</button>
-      <button (click)="deletePage(page.id)">Delete</button>
+    <td class="py-1 px-2">{{ page.name | shuffleString }}</td>
+    <td class="py-1 px-2">{{ page.content | shuffleString }}</td>
+    <td class="py-1 px-2">{{ page.path | shuffleString }}</td>
+    <td class="py-1 px-2">
+      <button class="btn-primary" (click)="openUpdateModal(page)">Update</button>
+      <button class="btn-red" (click)="deletePage(page.id)">Delete</button>
     </td>
   </tr>
   </tbody>

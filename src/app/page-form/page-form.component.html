@@ -1,15 +1,15 @@
-<form [formGroup]="pageForm" (ngSubmit)="save()">
+<form [formGroup]="pageForm" (ngSubmit)="save()" class="flex flex-col space-y-2 p-4">
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput formControlName="name">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Content</mat-label>
-    <input matInput formControlName="content">
+    <textarea rows="4" cols="50" matInput formControlName="content"></textarea>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Path</mat-label>
     <input matInput formControlName="path">
   </mat-form-field>
-  <button mat-button type="submit">Save</button>
+  <button class="btn-primary"  type="submit">Save</button>
 </form>

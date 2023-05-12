@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
@@ -11,15 +12,24 @@ export class SignInComponent {
   password: string = "";
   message: string = "";
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, private router: Router) { }
+
+
+  ngOnInit() {
+    this.afAuth.authState.subscribe((user) => {
+      if (user) {
+        this.router.navigate(['/']);
+      }
+    });
   }
+
 
   signIn() {
     this.afAuth.signInWithEmailAndPassword(this.email, this.password).then(
-      response => {
-        this.message = "Success sign-in"
+      (response:any) => {
+        this.router.navigate(['/']);
       }
-    ).catch(error => {
+    ).catch((error:any) => {
       this.message = error.message;
     });
   }

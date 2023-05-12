@@ -4,12 +4,13 @@ import { PagesComponent } from './pages/pages.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {AuthGuard} from "@angular/fire/auth-guard";
+import {AuthService} from "./services/auth.service";
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'pages', component: PagesComponent, canActivate: [AuthGuard] },
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' }
+  { path: '', component: PagesComponent, canActivate: [AuthService] },
+  { path: '**', redirectTo: 'sign-in', pathMatch: 'full' }
 ];
 
 @NgModule({
