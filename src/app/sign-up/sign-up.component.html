@@ -1,0 +1,13 @@
+
+<div class="flex items-center">
+  <h1>Sign Up</h1>
+  <a class="ml-4" href="/sign-in" >Sign In</a>
+</div>
+
+<form (ngSubmit)="signUp()" class="flex flex-col w-1/4">
+  <input class="my-4" [(ngModel)]="email" name="email" placeholder="Email" required>
+  <input class="my-4" [(ngModel)]="password" name="password" placeholder="Password" type="password" required>
+  <button type="submit" class="btn-primary">Sign Up</button>
+</form>
+
+<p *ngIf="message">{{ message }}</p>

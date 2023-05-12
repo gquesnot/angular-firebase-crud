@@ -1,0 +1,15 @@
+<form [formGroup]="pageForm" (ngSubmit)="save()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Content</mat-label>
+    <input matInput formControlName="content">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Path</mat-label>
+    <input matInput formControlName="path">
+  </mat-form-field>
+  <button mat-button type="submit">Save</button>
+</form>
